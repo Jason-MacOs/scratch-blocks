@@ -353,7 +353,7 @@ Blockly.Css.CONTENT = [
     'text-align: center;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
     /*'font-size: .8em;',*/
-    'font-size: 16px;',
+    'font-size: 1em;',
   '}',
 
   '.blocklyResizeSE {',
@@ -978,7 +978,7 @@ Blockly.Css.CONTENT = [
   '.scratchColourPickerLabel {',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
     /*'font-size: 0.65rem;',*/
-    'font-size: 16px;',
+    'font-size: 0.85rem;',
     'color: $colour_toolboxText;',
     'margin: 8px;',
   '}',
@@ -1261,14 +1261,14 @@ Blockly.Css.CONTENT = [
     'background: $colour_toolbox;',
     'color: $colour_toolboxText;',
     /*'font-size: .7rem;',*/
-    'font-size: 16px;',
+    'font-size: 1rem;',
     'user-select: none;',
     '-webkit-user-select: none;',
     '-moz-user-select: none;',
     '-ms-user-select: none;',
   '}',
   '.scratchCategoryMenuItemLabel {',
-    'font-size: 16px !important;',
+    'font-size: 1rem !important;',
   '}',
   '.scratchCategoryMenuHorizontal {',
     'width: 100%;',
@@ -1276,7 +1276,7 @@ Blockly.Css.CONTENT = [
     'background: $colour_toolbox;',
     'color: $colour_toolboxText;',
     /*'font-size: .7em;',*/
-    'font-size: 16px;',
+    'font-size: 1em;',
     'user-select: none;',
     '-webkit-user-select: none;',
     '-moz-user-select: none;',
