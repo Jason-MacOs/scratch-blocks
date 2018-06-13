@@ -228,7 +228,8 @@ Blockly.Css.CONTENT = [
     'color: #000;',
     'display: none;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 9pt;',
+    /*'font-size: 9pt;',*/
+    'font-size: 16pt;',
     'opacity: 0.9;',
     'padding: 2px;',
     'position: absolute;',
@@ -313,7 +314,8 @@ Blockly.Css.CONTENT = [
     'cursor: pointer;',
     'font-weight: 600;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    /* 'font-size: 12pt;', */
+    'font-size: 16pt;',
     '-webkit-tap-highlight-color: rgba(0,0,0,0);',
   '}',
 
@@ -350,7 +352,8 @@ Blockly.Css.CONTENT = [
     'word-wrap: break-word;',
     'text-align: center;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: .8em;',
+    /*'font-size: .8em;',*/
+    'font-size: 1em;',
   '}',
 
   '.blocklyResizeSE {',
@@ -461,12 +464,14 @@ Blockly.Css.CONTENT = [
   '.blocklyText {',
     'fill: #fff;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    /*'font-size: 12pt;',*/
+    'font-size: 16pt;',
     'font-weight: 500;',
   '}',
 
   '.blocklyTextTruncated {',
-    'font-size: 11pt;',
+    /*'font-size: 11pt;',*/
+    'font-size: 16pt;',
   '}',
 
   '.blocklyNonEditableText>text {',
@@ -529,8 +534,9 @@ Blockly.Css.CONTENT = [
 
   '.blocklyFlyoutLabelText {',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 14pt;',
     'fill: #575E75;',
+    /*'font-size: 14pt;',*/
+    'font-size: 16pt;',
     'font-weight: bold;',
   '}',
 
@@ -668,7 +674,8 @@ Blockly.Css.CONTENT = [
 
   '.scratchCommentText {',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    /*'font-size: 12pt;',*/
+    'font-size: 16pt;',
     'font-weight: 400;',
   '}',
 
@@ -694,7 +701,8 @@ Blockly.Css.CONTENT = [
   '.blocklyHtmlInput {',
     'border: none;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 12pt;',
+    /*'font-size: 12pt;',*/
+    'font-size: 16pt !important;',
     'height: 100%;',
     'margin: 0;',
     'outline: none;',
@@ -969,7 +977,8 @@ Blockly.Css.CONTENT = [
 
   '.scratchColourPickerLabel {',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'font-size: 0.65rem;',
+    /*'font-size: 0.65rem;',*/
+    'font-size: 0.85rem;',
     'color: $colour_toolboxText;',
     'margin: 8px;',
   '}',
@@ -1204,7 +1213,8 @@ Blockly.Css.CONTENT = [
   '.blocklyWidgetDiv .goog-menuitem-mnemonic-separator, ',
   '.blocklyDropDownDiv .goog-menuitem-mnemonic-separator {',
     'color: #999;',
-    'font-size: 12px;',
+    /*'font-size: 12px;',*/
+    'font-size: 16px;',
     'padding-left: 4px;',
   '}',
 
@@ -1250,19 +1260,23 @@ Blockly.Css.CONTENT = [
     'width: 52px;',
     'background: $colour_toolbox;',
     'color: $colour_toolboxText;',
-    'font-size: .7rem;',
+    /*'font-size: .7rem;',*/
+    'font-size: 1rem;',
     'user-select: none;',
     '-webkit-user-select: none;',
     '-moz-user-select: none;',
     '-ms-user-select: none;',
   '}',
-
+  '.scratchCategoryMenuItemLabel {',
+    'font-size: 1rem !important;',
+  '}',
   '.scratchCategoryMenuHorizontal {',
     'width: 100%;',
     'height: 50px;',
     'background: $colour_toolbox;',
     'color: $colour_toolboxText;',
-    'font-size: .7em;',
+    /*'font-size: .7em;',*/
+    'font-size: 1em;',
     'user-select: none;',
     '-webkit-user-select: none;',
     '-moz-user-select: none;',
