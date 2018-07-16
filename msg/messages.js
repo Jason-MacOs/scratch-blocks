@@ -1,8 +1,18 @@
 // This file was automatically generated.  Do not modify.
 
+/**
+ * @fileoverview English strings.
+ * @author ascii@media.mit.edu (Andrew Sliwinski)
+ *
+ * After modifying this file, run `npm run translate` from the root directory
+ * to regenerate `./msg/json/en.json`.
+ * IMPORTANT:
+ * All message strings must use single quotes for the scripts to work properly
+ */
 'use strict';
 
 goog.provide('Blockly.Msg.en');
+
 goog.require('Blockly.Msg');
 
 Blockly.Msg.CONTROL_FOREVER = "重复执行";

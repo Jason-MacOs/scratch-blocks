@@ -127,6 +127,7 @@
     "MOTION_ALIGNSCENE_TOPRIGHT": "top-right",
     "MOTION_XSCROLL": "x scroll",
     "MOTION_YSCROLL": "y scroll",
+    "MOTION_STAGE_SELECTED": "Stage selected: no motion blocks",
     "OPERATORS_ADD": "%1 + %2",
     "OPERATORS_SUBTRACT": "%1 - %2",
     "OPERATORS_MULTIPLY": "%1 * %2",

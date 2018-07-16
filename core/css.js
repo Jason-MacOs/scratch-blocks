@@ -655,16 +655,29 @@ Blockly.Css.CONTENT = [
 
   // Scratch Comments
 
+  '.scratchCommentForeignObject {',
+    'position: relative;',
+  '}',
+
   '.scratchCommentBody {',
     'background-color: #fef49c;',
-    'display: flex',
-    'justify-content: center;',
-    'align-items: center;',
   '}',
 
   '.scratchCommentRect {',
     'fill: #fef49c;',
-    'stroke-width: 1px',
+  '}',
+
+  '.scratchCommentTarget {',
+    'fill: transparent;',
+  '}',
+
+  '.scratchWorkspaceCommentBorder {',
+    'stroke: #bcA903;',
+    'stroke-width: 1px;',
+  '}',
+
+  '.scratchCommentTargetFocused {',
+    'fill: none;',
   '}',
 
   '.scratchCommentTopBar {',
@@ -989,6 +1002,12 @@ Blockly.Css.CONTENT = [
 
   '.scratchColourPickerReadout {',
     'margin-left: 10px;',
+  '}',
+
+  '.scratchMatrixButtonDiv {',
+    'width: 50%;',
+    'text-align: center;',
+    'float: left;',
   '}',
 
   /* Copied from: goog/css/menu.css */

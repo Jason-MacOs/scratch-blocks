@@ -133,6 +133,7 @@ Blockly.Msg["MOTION_ALIGNSCENE_TOPLEFT"] = "top-left";
 Blockly.Msg["MOTION_ALIGNSCENE_TOPRIGHT"] = "top-right";
 Blockly.Msg["MOTION_XSCROLL"] = "x scroll";
 Blockly.Msg["MOTION_YSCROLL"] = "y scroll";
+Blockly.Msg["MOTION_STAGE_SELECTED"] = "Stage selected: no motion blocks";
 Blockly.Msg["OPERATORS_ADD"] = "%1 + %2";
 Blockly.Msg["OPERATORS_SUBTRACT"] = "%1 - %2";
 Blockly.Msg["OPERATORS_MULTIPLY"] = "%1 * %2";
