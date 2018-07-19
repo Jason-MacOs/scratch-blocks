@@ -261,7 +261,7 @@ Blockly.ContextMenu.blockHelpOption = function(block) {
  */
 Blockly.ContextMenu.blockDuplicateOption = function(block) {
   var duplicateOption = {
-    text: Blockly.Msg.DUPLICATE_BLOCK,
+    text: Blockly.Msg.DUPLICATE,
     enabled: true,
     callback: block.duplicateAndDragCallback_()
   };
