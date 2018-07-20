@@ -470,7 +470,7 @@ Blockly.Variables.renameVariable = function(workspace, variable,
   var validate = Blockly.Variables.nameValidator_.bind(null, varType);
 
   var promptText = promptMsg.replace('%1', variable.name);
-  Blockly.prompt(promptText, '',
+  Blockly.prompt(promptText, variable.name,
       function(newName, additionalVars) {
         additionalVars = additionalVars || [];
         var additionalVarNames = variable.isLocal ? [] : additionalVars;
