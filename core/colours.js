@@ -70,6 +70,12 @@ Blockly.Colours = {
     "secondary": "#FF8000",
     "tertiary": "#DB6E00"
   },
+  // Added by Maggie - color for matrix
+  "matrix": {
+    "primary": "#5E73FF",
+    "secondary": "#5669E8",
+    "tertiary": "#5264DD"
+  },
   // This is not a new category, but rather for differentiation
   // between lists and scalar variables.
   "data_lists": {
