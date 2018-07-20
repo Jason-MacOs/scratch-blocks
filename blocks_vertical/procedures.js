@@ -609,7 +609,6 @@ Blockly.ScratchBlocks.ProcedureUtils.focusLastEditor_ = function() {
  */
 Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal = function() {
   Blockly.WidgetDiv.hide(true);
-  //this.procCode_ = this.procCode_ + ' label text';
   this.procCode_ = this.procCode_ + Blockly.Msg.LABEL_TEXT;
   this.updateDisplay_();
   this.focusLastEditor_();
@@ -638,7 +637,6 @@ Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
 Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal = function() {
   Blockly.WidgetDiv.hide(true);
   this.procCode_ = this.procCode_ + ' %s';
-  //this.displayNames_.push('number or text');
   this.displayNames_.push(Blockly.Msg.NUMBER_OR_TEXT);
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('todo');
