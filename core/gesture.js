@@ -969,6 +969,7 @@ Blockly.Gesture.prototype.hasStarted = function() {
 Blockly.Gesture.prototype.forceStartBlockDrag = function(fakeEvent, block) {
   this.handleBlockStart(fakeEvent, block);
   this.handleWsStart(fakeEvent, block.workspace);
+  this.updateFromEvent_(fakeEvent);
   this.isDraggingBlock_ = true;
   this.hasExceededDragRadius_ = true;
   this.startDraggingBlock_();
