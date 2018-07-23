@@ -386,8 +386,8 @@ Blockly.FieldMatrix.prototype.createButton_ = function(val) {
   });
   var nodeSize = Blockly.FieldMatrix.MATRIX_NODE_SIZE / (MATRIX_SIZE + 1);
   var nodePad = Blockly.FieldMatrix.MATRIX_NODE_SIZE / MATRIX_SIZE_SQUARE;
-  for (var i = 0; i < 8; i++) {
-      for (var n = 0; n < 8; n++) {
+  for (var i = 0; i < MATRIX_SIZE; i++) {
+      for (var n = 0; n < MATRIX_SIZE; n++) {
       Blockly.utils.createSvgElement('rect', {
         'x': ((nodeSize + nodePad) * n) + nodePad,
         'y': ((nodeSize + nodePad) * i) + nodePad,
