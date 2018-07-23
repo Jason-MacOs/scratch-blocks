@@ -1005,9 +1005,10 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.scratchMatrixButtonDiv {',
-    'width: 50%;',
+    // 'width: 50%;',
     'text-align: center;',
     'float: left;',
+    'margin: auto 3px',
   '}',
 
   /* Copied from: goog/css/menu.css */
