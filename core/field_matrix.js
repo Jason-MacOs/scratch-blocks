@@ -29,6 +29,9 @@ goog.provide('Blockly.FieldMatrix');
 
 goog.require('Blockly.DropDownDiv');
 
+// predefined images
+goog.require('Blockly.PredefinedImage');
+
 // default matrix size as 8
 const MATRIX_SIZE = 8;
 const MATRIX_SIZE_SQUARE = Math.pow(MATRIX_SIZE, 2);
@@ -121,6 +124,14 @@ Blockly.FieldMatrix = function(matrix) {
    * @private
    */
   this.matrixReleaseWrapper_ = null;
+
+  /**
+   * Touch event wrapper.
+   * Runs when the predefined image is selected.
+   * @type {Array}
+   * @private
+  */
+  this.predefinedButtonsWrappers_ = [];
 };
 goog.inherits(Blockly.FieldMatrix, Blockly.Field);
 
@@ -308,7 +319,7 @@ Blockly.FieldMatrix.prototype.showEditor_ = function() {
   }, div);
   // Create the matrix
   this.ledButtons_ = [];
-for (var i = 0; i < MATRIX_SIZE; i++) {
+  for (var i = 0; i < MATRIX_SIZE; i++) {
     for (var n = 0; n < MATRIX_SIZE; n++) {
       var x = (Blockly.FieldMatrix.MATRIX_NODE_SIZE * n) +
         (Blockly.FieldMatrix.MATRIX_NODE_PAD * (n + 1));
@@ -328,19 +339,20 @@ for (var i = 0; i < MATRIX_SIZE; i++) {
   }
   // Div for lower button menu
   var buttonDiv = document.createElement('div');
-  // Button to clear matrix
-  var clearButtonDiv = document.createElement('div');
-  clearButtonDiv.className = 'scratchMatrixButtonDiv';
-  var clearButton = this.createButton_(this.sourceBlock_.colourSecondary_);
-  clearButtonDiv.appendChild(clearButton);
-  // Button to fill matrix
-  var fillButtonDiv = document.createElement('div');
-  fillButtonDiv.className = 'scratchMatrixButtonDiv';
-  var fillButton = this.createButton_('#FFFFFF');
-  fillButtonDiv.appendChild(fillButton);
-
-  buttonDiv.appendChild(clearButtonDiv);
-  buttonDiv.appendChild(fillButtonDiv);
+  buttonDiv.style.width = matrixSize + 'px';  
+  // add predefined images
+  for (let key in Blockly.PredefinedImage) {
+    let imageButtonDiv = document.createElement('div');
+    imageButtonDiv.className = 'scratchMatrixButtonDiv';
+    let imageButton = this.createButton_(Blockly.PredefinedImage[key][1]);
+    imageButtonDiv.appendChild(imageButton);
+    buttonDiv.appendChild(imageButtonDiv);
+    let handleMouseDown = function(e) {
+        if (e.button != 0) return;
+      this.setValue(Blockly.PredefinedImage[key][0]);
+    };
+    this.predefinedButtonsWrappers_.push(Blockly.bindEvent_(imageButton, 'mousedown', this, handleMouseDown));
+  }
   div.appendChild(buttonDiv);
   Blockly.DropDownDiv.setColour(this.sourceBlock_.getColour(),
   this.sourceBlock_.getColourTertiary());
@@ -349,12 +361,6 @@ for (var i = 0; i < MATRIX_SIZE; i++) {
 
   this.matrixTouchWrapper_ =
       Blockly.bindEvent_(this.matrixStage_, 'mousedown', this, this.onMouseDown);
-  this.clearButtonWrapper_ =
-      Blockly.bindEvent_(clearButton, 'mousedown', this, this.clearMatrix_);
-  this.fillButtonWrapper_ =
-    Blockly.bindEvent_(fillButton, 'mousedown', this, this.fillMatrix_);
-
-  // Update the matrix for the current value
   this.updateMatrix_();
 
 };
@@ -368,7 +374,8 @@ this.nodeCallback_ = function(e, num) {
  * @param {string} fill The color to fill the matrix nodes.
  * @return {SvgElement} The button svg element.
  */
-Blockly.FieldMatrix.prototype.createButton_ = function(fill) {
+
+Blockly.FieldMatrix.prototype.createButton_ = function(val) {
   var button = Blockly.utils.createSvgElement('svg', {
     'xmlns': 'http://www.w3.org/2000/svg',
     'xmlns:html': 'http://www.w3.org/1999/xhtml',
@@ -377,22 +384,21 @@ Blockly.FieldMatrix.prototype.createButton_ = function(fill) {
     'height': Blockly.FieldMatrix.MATRIX_NODE_SIZE + 'px',
     'width': Blockly.FieldMatrix.MATRIX_NODE_SIZE + 'px'
   });
-  var nodeSize = Blockly.FieldMatrix.MATRIX_NODE_SIZE / 4;
-  var nodePad = Blockly.FieldMatrix.MATRIX_NODE_SIZE / 16;
-  for (var i = 0; i < 3; i++) {
-    for (var n = 0; n < 3; n++) {
+  var nodeSize = Blockly.FieldMatrix.MATRIX_NODE_SIZE / (MATRIX_SIZE + 1);
+  var nodePad = Blockly.FieldMatrix.MATRIX_NODE_SIZE / MATRIX_SIZE_SQUARE;
+  for (var i = 0; i < 8; i++) {
+      for (var n = 0; n < 8; n++) {
       Blockly.utils.createSvgElement('rect', {
         'x': ((nodeSize + nodePad) * n) + nodePad,
         'y': ((nodeSize + nodePad) * i) + nodePad,
         'width': nodeSize, 'height': nodeSize,
         'rx': nodePad, 'ry': nodePad,
-        'fill': fill
+        'fill': val[i][n] === '1' ? "#FFFFFF" : this.sourceBlock_.colourSecondary_
       }, button);
     }
   }
   return button;
 };
-
 /**
  * Redraw the matrix with the current value.
  * @private
@@ -557,11 +563,8 @@ Blockly.FieldMatrix.prototype.dispose_ = function() {
     if (thisField.matrixMoveWrapper_) {
       Blockly.unbindEvent_(thisField.matrixMoveWrapper_);
     }
-    if (thisField.clearButtonWrapper_) {
-      Blockly.unbindEvent_(thisField.clearButtonWrapper_);
-    }
-    if (thisField.fillButtonWrapper_) {
-      Blockly.unbindEvent_(thisField.fillButtonWrapper_);
+    for (let i of this.predefinedButtonsWrappers_) {
+        Blockly.unbindEvent_(i);
     }
   };
 };
